@@ -1,6 +1,9 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
+const { PrismaClient } = require('@prisma/client');
+
+const prisma = new PrismaClient();
 
 const schema = buildSchema(`
   type Query {
@@ -16,8 +19,8 @@ const schema = buildSchema(`
 `);
 
 const root = {
-  tracks: () => {
-    return [{ id: 1, name: 'Track 1', artist: 'Artist 1', url: '/track1.mp3', lyrics: 'Lyrics' }];
+  tracks: async () => {
+    return await prisma.track.findMany();
   },
 };
 
@@ -28,4 +31,4 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }));
 
-app.listen(4000, () => console.log('Now browse to localhost:4000/graphql'));
+app.listen(4000, () => console.log('Now browse to http://localhost:4000/graphql'));

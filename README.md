@@ -1,41 +1,40 @@
-# NoteStream
-**NoteStream** is a modern music streaming application, inspired by Spotify, that utilizes advanced web technologies to provide a seamless and feature-rich user experience. Built with **Next.js** for a responsive and scalable frontend, the app integrates **AI/ML**-powered recommendations using **FastAPI**, handles music streaming and user data with **Node.js**, **GraphQL**, and **Prisma**, and is hosted on **Google Cloud**. Authenticated via **Auth0**, users can create and share playlists, explore personalized recommendations, and stream their favorite tracks—both online and offline.
+# **NoteStream**
 
-## Features Breakdown:
+**NoteStream** is an advanced music streaming app, inspired by Spotify, that brings together cutting-edge technologies to deliver a modern, personalized listening experience. The app integrates AI-driven recommendations, real-time lyrics, and social sharing, all while providing offline access via PWA.
 
-1. **User Authentication (Auth0)**:
-   - **Login/Signup**: Users can sign up or log in via social accounts (Google, Facebook) or email/password.
-   - **JWT (JSON Web Tokens)**: Securely handle user sessions and pass authentication tokens to the backend.
+## **Key Features**
 
-2. **Music Streaming**:
-   - **Track Playback**: Use **HLS** for streaming tracks stored on Google Cloud.
-   - **Play/Pause Controls**: Basic controls for playing, pausing, and skipping tracks.
-   - **Track Buffering**: Show buffering status when streaming tracks with poor internet.
+- **Music Streaming**: Stream high-quality music tracks.
+- **Playlists & Favorites**: Create, manage, and share playlists and favorite tracks.
+- **AI-Powered Recommendations**: Get personalized recommendations using machine learning algorithms.
+- **Real-Time Lyrics**: Sing along with real-time lyrics synced to your music.
+- **Social Sharing**: Share your playlists and favorite tracks with friends.
+- **Offline Mode**: Listen to your music even without an internet connection using Progressive Web App (PWA) technology.
+- **Authentication**: Secure login/signup using Auth0 with social login options (Google, Spotify).
+  
+## **Technologies Stack**
 
-3. **Playlists & Favorites**:
-   - **Create, Edit, Delete Playlists**: Allow users to manage personal playlists.
-   - **Favorite Tracks**: Users can mark tracks as favorites for easy access.
-   - **Collaborative Playlists** (Optional): Share playlists with friends for collaboration.
+### **Frontend**
 
-4. **Recommendations (AI/ML via FastAPI)**:
-   - **Personalized Recommendations**: Use collaborative filtering or content-based filtering models.
-   - **Mood-Based Recommendations**: Suggest tracks based on the user’s current mood or activity.
-   - **Trending Songs**: Show popular or trending tracks in the app.
+- **Next.js** (with TypeScript): Fast server-side rendering for performance and SEO.
+- **Tailwind CSS**: For responsive and scalable styling.
+- **React Query**: Efficient data fetching and caching.
+- **SWC**: Lightning-fast JavaScript/TypeScript compilation.
+- **PWA**: Offline-first experience for mobile and desktop.
 
-5. **Real-time Lyrics & Metadata**:
-   - **Lyrics Display**: Use services like **Musixmatch API** to display real-time lyrics synced with songs.
-   - **Track Metadata**: Display track information (artist, album, release year) on the playback screen.
+### **Backend**
 
-6. **Social Sharing**:
-   - **Share Tracks/Playlists**: Enable users to share links to tracks or playlists on social media.
-   - **Embed Playlists**: Generate embeddable playlist widgets for other websites.
+- **FastAPI** (Python): Machine learning and AI recommendation services.
+- **Node.js** (with GraphQL): Provides flexible and efficient APIs.
+- **Prisma ORM**: Simplifies interaction with PostgreSQL databases.
 
-7. **Offline Playback**:
-   - **Download Tracks**: Allow users to download songs for offline playback.
-   - **Track Encryption**: Ensure that downloaded songs are encrypted and cannot be accessed outside the app.
-   - **Offline Playlist Management**: Users can create and manage playlists offline.
+### **Database**
 
-8. **PWA (Progressive Web App)**:
-   - **Installable App**: Users can install NoteStream as a PWA on their devices.
-   - **Offline Support**: Provide limited functionality offline using **service workers** (playlists and favorites).
-   - **Push Notifications**: Notify users of new tracks or recommendations.
+- **PostgreSQL**: Stores user data, playlists, and music metadata.
+- **Redis**: Caching for faster query responses.
+- **Elasticsearch**: Advanced search for music and metadata.
+
+### **Cloud**
+
+- **Google Cloud**: Scalable hosting with Kubernetes and Docker.
+- **CI/CD**: GitHub Actions for automated testing, building, and deployment.
